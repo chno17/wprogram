@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Calculator</title>
+    <script>
+        function calculate() {
+            let x = document.getElementById('x').value;
+            let y = document.getElementById('y').value;
+            let num1 = parseFloat(x);
+            let num2 = parseFloat(y);
+            let operation = prompt("사칙연산을 입력하세요 (+, -, *):");
+            let result;
+            switch(operation) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                default:
+                    result = '존재하지 않는 사칙연산입니다.';
+            }
+            document.getElementById('sum').value = result;
+        }
+    </script>
+</head>
+<body>
+    <h3>사칙연산 계산기</h3>
+    <form name="myform" action="..." method="POST">
+        첫번째 숫자 : <input id="x" type="text"/><br/>
+        두번째 숫자 : <input id="y" type="text"/><br/>
+        결과 : <input id="sum" type="text" readonly/><br/>
+        <input type="button" value="계산" onclick="calculate();"/>
+    </form>
+</body>
+</html>
